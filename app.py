@@ -16,6 +16,9 @@ chrome_options = Options()
 chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--window-size=900,900")
 chrome_options.add_argument("--disable-gpu")
+# Required flags for running Chrome inside Linux/Ubuntu server as root
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=chrome_options)
 
